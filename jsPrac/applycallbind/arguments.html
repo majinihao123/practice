@@ -1,0 +1,10 @@
+<script>
+    function test() {
+        //console.log([].splice.call(arguments, 1))
+        //console.log(new Array().splice.call(arguments, 1))
+        //console.log(Array.prototype.splice.call(arguments, 1))
+        console.log([...arguments].splice(1))
+    }
+
+    test(1, 2, 3)
+</script>

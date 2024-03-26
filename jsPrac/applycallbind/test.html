@@ -1,0 +1,39 @@
+<script>
+    Function.prototype.myCall = function(thisArg) {
+        thisArg = thisArg || window;
+        thisArg.fnc = this;
+        let arg = []
+        for (let i = 1; i < arguments.length; i++) {
+            arg.push(`arguments[${i}]`)
+        }
+
+        let result = eval(`thisArg.fnc(${arg})`)
+        delete thisArg.fnc
+        return result;
+    }
+
+    Function.prototype.myApply = function(thisArg, arr) {
+        thisArg = thisArg || window;
+        thisArg.fnc = this;
+        let arg = [];
+        for (let i = 0; i < arr.length; i++) {
+            arg.push(`arr[${i}]`);
+        }
+        let result = eval(`thisArg.fnc(${arg})`)
+        console.log(`thisArg.fnc(${arg})`)
+        delete thisArg.fnc;
+        return arg;
+
+    }
+
+    let obj = {
+        name: 'ma'
+    }
+
+    function allName(firstName, lastName) {
+        console.log(`${firstName}${this.name}${lastName}`)
+    }
+
+    allName.myApply(obj, ['ni', 'hao'])
+    allName.call(obj, 'ni', 'hao')
+</script>
