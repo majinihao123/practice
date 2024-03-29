@@ -4,3 +4,6 @@
 3.js class  
 4.defineProperty用法  
 5.vue diff 算法  
+6.find  
+7.filer  
+8.indexOf  

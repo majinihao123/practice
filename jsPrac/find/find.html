@@ -1,0 +1,16 @@
+<script>
+    Array.prototype.myFind = function(callback) {
+        let thisArg = arguments[1] || window,
+            _arr = this;
+        for (let i = 0; i < _arr.length; i++) {
+            console.log(_arr[i])
+            if (callback.call(thisArg, _arr[i], i, _arr))
+                return _arr[i]
+        }
+        return undefined;
+    }
+
+    let i = [1, 2, 3].myFind((x) => {
+        return x > 2
+    })
+</script>

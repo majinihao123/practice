@@ -1,0 +1,36 @@
+<script>
+    Array.prototype.myFilter = function(callback) {
+        let _arr = this,
+            thisArg = arguments[1],
+            res = [];
+        for (let i = 0; i < _arr.length; i++) {
+            if (callback.call(thisArg, _arr[i], i, _arr)) {
+                res.push(_arr[i])
+            }
+        }
+        return res;
+    }
+
+    // Array.prototype.myFilter = function(callbackFn) {
+    //     var _arr = this,
+    //         thisArg = arguments[1] || window,
+    //         res = [];
+    //     for (var i = 0; i < _arr.length; i++) {
+    //         // 回调函数执行为true
+    //         if (callbackFn.call(thisArg, _arr[i], i, _arr)) {
+    //             res.push(_arr[i]);
+    //         }
+    //     }
+    //     return res;
+    // }
+
+    function test(x) {
+        return x > 2;
+    }
+
+    let ans = [1, 2, 3, 4].myFilter((x) => {
+        return x > 2
+    })
+
+    console.log(ans)
+</script>
