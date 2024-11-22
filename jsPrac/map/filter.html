@@ -1,0 +1,11 @@
+<script>
+    Array.prototype.map1 = function (fn) {
+        let newArr = [];
+        for (let i = 0; i < this.length; i++) {
+            newArr.push(fn(this[i]))
+        };
+        return newArr;
+    }
+
+    console.log([1, 2, 3].map1(item => item * 2)) // [2,4,6]
+</script>

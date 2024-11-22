@@ -6,4 +6,5 @@
 5.vue diff 算法  
 6.find  
 7.filer  
-8.indexOf  
+8.indexOf
+9.手写map
