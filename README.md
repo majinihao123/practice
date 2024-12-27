@@ -8,3 +8,4 @@
 7.filer  
 8.indexOf
 9.手写map
+10.手写new
